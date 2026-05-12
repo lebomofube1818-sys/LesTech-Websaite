@@ -44,3 +44,19 @@
 .blue-gradient {
   @apply bg-gradient-to-tr from-[#0066FF] to-[#00CCFF];
 }
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  @apply bg-white/10 rounded-full hover:bg-brand-green/30 transition-colors;
+}
+
+.perspective-2000 {
+  perspective: 2000px;
+}

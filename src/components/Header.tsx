@@ -11,9 +11,10 @@ export const Header = () => {
 
   const navLinks = [
     { name: 'Services', href: '/services' },
-    { name: 'Impact', href: '/impact' },
+    { name: 'Digital Impact', href: '/impact' },
     { name: 'Digital Mission', href: '/mission' },
     { name: 'One-stop strategy', href: '/strategy' },
+    { name: 'About Us', href: '/about' },
   ];
 
   return (

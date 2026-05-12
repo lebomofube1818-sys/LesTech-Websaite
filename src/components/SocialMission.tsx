@@ -22,11 +22,31 @@ export const SocialMission = () => {
               We create digital solutions, skills, and opportunities that empower young Basotho to build, earn, and lead.
             </p>
 
-            <div className="p-5 sm:p-6 rounded-2xl sm:rounded-3xl brand-border bg-brand-green/5 inline-block">
-              <p className="text-brand-green font-black tracking-widest text-xs sm:text-sm italic uppercase">
+            <motion.div 
+              animate={{ 
+                y: [0, -5, 0],
+                rotateX: [0, 2, 0]
+              }}
+              transition={{ 
+                duration: 4, 
+                repeat: Infinity, 
+                ease: "easeInOut" 
+              }}
+              whileHover={{ 
+                scale: 1.05,
+                rotateX: 10,
+                rotateY: -5,
+                z: 40,
+                boxShadow: "0 20px 40px rgba(26, 230, 128, 0.2)"
+              }}
+              style={{ transformStyle: 'preserve-3d' }}
+              className="p-5 sm:p-6 rounded-2xl sm:rounded-3xl brand-border bg-brand-green/5 inline-block group cursor-default"
+            >
+              <p className="text-brand-green font-black tracking-widest text-xs sm:text-sm italic uppercase relative z-10" style={{ transform: 'translateZ(20px)' }}>
                 WE DON'T JUST BUILD WEBSITES. WE BUILD FUTURES.
               </p>
-            </div>
+              <div className="absolute inset-0 bg-brand-green/10 blur-xl opacity-0 group-hover:opacity-100 transition-opacity -z-1" />
+            </motion.div>
           </div>
 
           <div className="lg:w-1/2 grid grid-cols-2 gap-3 sm:gap-6">

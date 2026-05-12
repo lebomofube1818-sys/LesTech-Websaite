@@ -22,10 +22,12 @@ const services = [
     title: 'Website & App Development',
     desc: 'Modern, responsive websites, custom web applications, and mobile apps tailored to your business needs.',
     icon: Code2,
+    price: 'R4,500+',
+    marketContext: 'Essential for Maseru-based MSMEs aiming for professional credibility and digital visibility.',
     details: [
       'Custom UI/UX Design',
-      'React & Next.js Performance',
-      'Cross-Platform Mobile Apps',
+      'Local Domain (.ls) Setup',
+      'M-Pesa/Ecocash Ready',
       'SEO-Optimized Architecture'
     ]
   },
@@ -33,32 +35,38 @@ const services = [
     title: 'Branding & Digital Marketing',
     desc: 'Logo & brand identity design, social media management, and digital campaigns that grow your brand.',
     icon: Palette,
+    price: 'R2,500+',
+    marketContext: 'Tailored social strategy for Lesotho\'s active Facebook and WhatsApp business communities.',
     details: [
-      'Brand Identity Systems',
-      'Content Strategy',
-      'PPC & Ad Optimization',
-      'Social Media Growth'
+      'Local Brand Identity Systems',
+      'Sotho-Focused Content Strategy',
+      'Social Media Growth',
+      'Ad Optimization'
     ]
   },
   {
     title: 'API & FinTech Solutions',
     desc: 'Custom API development, third-party integrations, and secure, scalable & reliable digital systems.',
     icon: Cpu,
+    price: 'R15,000+',
+    marketContext: 'Bridging technical gaps between local banking systems and modern digital interfaces.',
     details: [
       'Banking API Integration',
-      'Secure Payment Gateways',
-      'Scalable Microservices',
-      'Legacy System Modernization'
+      'Mobile Money Hooks',
+      'Secure Data Pipelines',
+      'Legacy Modernization'
     ]
   },
   {
     title: 'AI Solutions',
     desc: 'AI chatbots & assistants, process automation, and data analysis providing smart business insights.',
     icon: Brain,
+    price: 'R8,000+',
+    marketContext: 'Improving customer service efficiency for local retailers via automated WhatsApp bots.',
     details: [
-      'LLM Custom Training',
+      'Sesotho/English Chatbots',
       'Automated Support Bots',
-      'Predictive Analytics',
+      'Business Intelligence',
       'Workflow Automation'
     ]
   },
@@ -66,44 +74,52 @@ const services = [
     title: 'Online Payment Integrations',
     desc: 'Mobile money integrations, payment gateway setup, and secure transaction systems for your business.',
     icon: CreditCard,
+    price: 'R3,500+',
+    marketContext: 'Direct integration with M-Pesa and Ecocash—the backbone of Lesotho\'s digital economy.',
     details: [
-      'Mobile Money (M-Pesa/Ecocash)',
+      'M-Pesa / Ecocash API',
       'Global Credit Card Support',
-      'Fraud Detection Layers',
-      'Real-time Settlement'
+      'Instant Settlement Logs',
+      'Fraud Protection'
     ]
   },
   {
     title: 'E-Commerce Solutions',
     desc: 'High-performance online stores, product management systems, and secure checkout with order tracking.',
     icon: ShoppingCart,
+    price: 'R12,000+',
+    marketContext: 'Enabling Basotho artisans and retailers to sell across southern Africa with ease.',
     details: [
       'Inventory Management',
-      'Direct-to-Consumer Growth',
+      'Local Delivery Integration',
       'Secure Checkout Flow',
-      'Abandoned Cart Recovery'
+      'Order Tracking'
     ]
   },
   {
     title: 'Cloud & Hosting Solutions',
     desc: 'Reliable cloud hosting, domain registration, and daily backups with continuous maintenance.',
     icon: Cloud,
+    price: 'R350/mo',
+    marketContext: 'Low-latency hosting solutions for regional speed and 99.9% uptime for local traffic.',
     details: [
-      'Serverless Deployment',
-      'Auto-scaling Infrastructure',
-      'Daily Encrypted Backups',
-      '99.9% Uptime Guarantee'
+      'Safe Data Storage',
+      'Regional Edge Servers',
+      'Daily Backups',
+      '24/7 Managed Security'
     ]
   },
   {
     title: 'Cybersecurity & Data Protection',
     desc: 'Comprehensive website security, data encryption, and protection against evolving threats & attacks.',
     icon: ShieldCheck,
+    price: 'R5,000+',
+    marketContext: 'Protecting your business data against rising regional cyber threats and ensuring compliance.',
     details: [
-      'End-to-End Encryption',
-      'Vulnerability Assessments',
-      'DDoS Protection',
-      'Compliant Data Storage'
+      'Database Encryption',
+      'Security Audits',
+      'DDoS Mitigation',
+      'Privacy Law Compliance'
     ]
   },
 ];
@@ -217,8 +233,21 @@ export const ServicesOverview = () => {
                 </div>
                 <div>
                   <h3 className="text-2xl sm:text-3xl font-black text-gradient">{selectedService.title}</h3>
-                  <p className="text-brand-green font-bold text-xs sm:text-sm tracking-widest uppercase">Analysis Report</p>
+                  <div className="flex items-center gap-2 mt-1">
+                    <p className="text-brand-green font-bold text-xs sm:text-sm tracking-widest uppercase">Digital Opportunity Audit</p>
+                    <span className="w-1 h-1 rounded-full bg-white/20" />
+                    <p className="text-white/40 text-[10px] sm:text-xs font-mono uppercase tracking-widest">{selectedService.price}</p>
+                  </div>
                 </div>
+              </div>
+
+              <div className="mb-8 p-4 rounded-2xl bg-brand-green/5 border border-brand-green/10">
+                <p className="text-brand-green text-sm font-bold flex items-center gap-2 mb-1 uppercase tracking-widest">
+                  <Globe className="w-4 h-4" /> Lesotho Market Context
+                </p>
+                <p className="text-white/70 text-sm leading-relaxed">
+                  {(selectedService as any).marketContext}
+                </p>
               </div>
 
               <p className="text-base sm:text-lg text-white/70 mb-8 sm:mb-10 leading-relaxed italic">

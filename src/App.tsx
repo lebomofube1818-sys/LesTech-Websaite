@@ -8,12 +8,15 @@ import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import { Hero } from './components/Hero';
 import { ServicesOverview } from './components/ServicesOverview';
-import { CaseStudies } from './components/CaseStudies';
+import { DigitalInsights } from './components/CaseStudies';
+import { About } from './components/About';
 import { ContactForm } from './components/ContactForm';
 import { AIPlanner } from './components/AIPlanner';
-import { Testimonials } from './components/Testimonials';
+import { InnovationBlog } from './components/Testimonials';
 import { ExitIntentPopup } from './components/ExitIntentPopup';
 import { SocialMission } from './components/SocialMission';
+import { motion } from 'motion/react';
+import { ArrowUpRight } from 'lucide-react';
 import { useEffect } from 'react';
 
 function ScrollToTop() {
@@ -28,9 +31,9 @@ const HomePage = () => (
   <main>
     <Hero />
     <ServicesOverview />
-    <CaseStudies />
+    <DigitalInsights />
     <SocialMission />
-    <Testimonials />
+    <InnovationBlog />
     <ContactForm />
   </main>
 );
@@ -44,7 +47,7 @@ const ServicesPage = () => (
 
 const ImpactPage = () => (
   <div className="pt-32">
-    <CaseStudies />
+    <DigitalInsights />
     <ContactForm />
   </div>
 );
@@ -63,29 +66,7 @@ const StrategyPage = () => (
   </div>
 );
 
-const AboutPage = () => (
-  <div className="pt-32 px-6 max-w-4xl mx-auto py-24">
-    <h1 className="text-6xl font-bold mb-12 tracking-tighter">Architecture & Growth.</h1>
-    <div className="prose prose-invert prose-lg max-w-none text-white/70 space-y-8">
-      <p>LesTech was founded on the principle that digital presence is no longer just a "marketing" channel—it's a core operational asset. We call this "Full House Digital solutions."</p>
-      <p>We are a localized collective of elite engineers, designers, and strategists. Our philosophy is rooted in "Operational Marketing." We don't just generate leads; we build the infrastructure that captures them, the logic that nurtures them, and the brand equity that keeps them.</p>
-      <div className="grid md:grid-cols-2 gap-12 pt-12">
-        <div className="glass p-8 rounded-3xl border-brand-green/20">
-          <h3 className="text-2xl font-display font-bold text-white mb-4">Our Core Pillars</h3>
-          <ul className="space-y-4">
-            <li className="flex gap-2"><span className="text-brand-green font-bold">01</span> Performance Engineering</li>
-            <li className="flex gap-2"><span className="text-brand-green font-bold">02</span> Data Integrity</li>
-            <li className="flex gap-2"><span className="text-brand-green font-bold">03</span> Brand Architecture</li>
-          </ul>
-        </div>
-        <div className="glass p-8 rounded-3xl border-brand-green/20">
-          <h3 className="text-2xl font-display font-bold text-white mb-4">Our Technology</h3>
-          <p>LesTech leverages custom Gemini-driven intelligence layers to predict market shifts and automate high-velocity demand generation.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-);
+const AboutPage = () => <About />;
 
 export default function App() {
   return (

@@ -32,7 +32,7 @@ export const Footer = () => {
               <ul className="space-y-4">
                 {[
                   { name: 'Services', href: '/services' },
-                  { name: 'Impact', href: '/impact' },
+                  { name: 'Digital Impact', href: '/impact' },
                   { name: 'Digital Mission', href: '/mission' },
                   { name: 'One-stop Strategy', href: '/strategy' },
                   { name: 'About Us', href: '/about' },

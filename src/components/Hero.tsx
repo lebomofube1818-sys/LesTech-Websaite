@@ -114,22 +114,37 @@ export const Hero = () => {
             </motion.div>
             
             <motion.div
+              animate={{ 
+                y: [0, 5, 0],
+                rotateX: [0, -1, 0]
+              }}
+              transition={{ 
+                duration: 5, 
+                repeat: Infinity, 
+                ease: "easeInOut",
+                delay: 0.5 
+              }}
               whileHover={{ 
                 scale: 1.05,
-                translateZ: 20,
-                boxShadow: "0 20px 40px rgba(0, 112, 243, 0.1)"
+                translateZ: 50,
+                rotateX: -5,
+                rotateY: 10,
+                boxShadow: "0 20px 40px rgba(0, 112, 243, 0.15)"
               }}
               whileTap={{ scale: 0.95 }}
-              className="w-full sm:w-auto"
+              style={{ transformStyle: 'preserve-3d' }}
+              className="w-full sm:w-auto mt-2 sm:mt-0"
             >
               <Button 
                 variant="outline" 
                 size="lg" 
-                className="w-full sm:w-auto px-10 backdrop-blur-sm transition-all hover:border-brand-green/50 shadow-xl"
+                className="w-full sm:w-auto px-10 backdrop-blur-sm transition-all hover:border-brand-green/50 shadow-xl relative z-10"
                 onClick={() => navigate('/services')}
+                style={{ transform: 'translateZ(20px)' }}
               >
                 Explore Our Tech
               </Button>
+              <div className="absolute inset-0 bg-brand-blue/5 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity" />
             </motion.div>
           </div>
 
