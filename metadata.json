@@ -2,5 +2,5 @@
   "name": "LesTech",
   "description": "Full House Digital Solutions - High-performance digital engineering, marketing, and technology strategies for ambitious brands.",
   "requestFramePermissions": [],
-  "majorCapabilities": []
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

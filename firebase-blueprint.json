@@ -1,0 +1,25 @@
+{
+  "entities": {
+    "Inquiry": {
+      "title": "Contact Form Inquiry",
+      "description": "A contact request from a potential client.",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string", "description": "The full name of the inquirer." },
+        "company": { "type": "string", "description": "The inquirer's business or organization." },
+        "email": { "type": "string", "format": "email", "description": "Work email for contact." },
+        "phone": { "type": "string", "description": "Work phone number." },
+        "sector": { "type": "string", "description": "The service or sector they are interested in." },
+        "message": { "type": "string", "description": "The project brief or inquiry details." },
+        "createdAt": { "type": "string", "format": "date-time", "description": "When the inquiry was submitted." }
+      },
+      "required": ["name", "company", "email", "phone", "sector", "message", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/inquiries/{inquiryId}": {
+      "schema": "Inquiry",
+      "description": "Collection of contact form inquiries."
+    }
+  }
+}
