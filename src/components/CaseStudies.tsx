@@ -204,24 +204,16 @@ export const DigitalInsights = () => {
             className="group block relative rounded-[32px] sm:rounded-[48px] overflow-hidden glass border-white/5 hover:border-brand-green/30 transition-all cursor-pointer shadow-2xl"
             onClick={() => setSelectedArticle(article)}
           >
-            <div className="relative aspect-[4/5] sm:aspect-[16/10] lg:aspect-square xl:aspect-[16/10]">
-              <img 
-                src={article.image} 
-                alt={article.category}
-                className="w-full h-full object-cover grayscale opacity-40 group-hover:grayscale-0 group-hover:opacity-60 group-hover:scale-105 transition-all duration-1000"
-                referrerPolicy="no-referrer"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-brand-black via-brand-black/40 to-transparent" />
-              
-              <div className="absolute top-6 left-6 sm:top-10 sm:left-10 flex gap-2">
-                {article.tags.map(tag => (
-                  <span key={tag} className="px-4 py-2 rounded-full glass text-[10px] font-bold uppercase tracking-widest text-white border-white/10 backdrop-blur-md">
-                    {tag}
-                  </span>
-                ))}
-              </div>
- 
-              <div className="absolute bottom-8 left-8 right-8 sm:bottom-12 sm:left-12 sm:right-12">
+             <div className="relative aspect-[4/5] sm:aspect-[16/10] lg:aspect-square xl:aspect-[16/10]">
+               <img 
+                 src={article.image} 
+                 alt={article.category}
+                 className="w-full h-full object-cover grayscale opacity-40 group-hover:grayscale-0 group-hover:opacity-60 group-hover:scale-105 transition-all duration-1000"
+                 referrerPolicy="no-referrer"
+               />
+               <div className="absolute inset-0 bg-gradient-to-t from-brand-black via-brand-black/40 to-transparent" />
+               
+               <div className="absolute bottom-8 left-8 right-8 sm:bottom-12 sm:left-12 sm:right-12">
                 <div className="flex items-center gap-2 mb-4">
                   <div className="w-10 h-[1px] bg-brand-green" />
                   <p className="text-brand-green font-bold text-xs sm:text-sm uppercase tracking-[0.2em]">{article.category}</p>

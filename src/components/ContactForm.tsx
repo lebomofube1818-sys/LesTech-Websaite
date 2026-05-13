@@ -69,32 +69,42 @@ export const ContactForm = () => {
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <label className="text-xs font-bold uppercase tracking-widest text-white/20">Identity</label>
-                    <input type="text" required className="w-full bg-white/5 border border-white/10 rounded-2xl p-4 focus:border-brand-green/50 outline-none text-white" placeholder="Full Name" />
+                    <input type="text" required className="w-full bg-white/5 border border-white/10 rounded-2xl p-4 focus:border-brand-green/50 outline-none text-white" placeholder="Full Names" />
                   </div>
+                  <div className="space-y-2">
+                    <label className="text-xs font-bold uppercase tracking-widest text-white/20">Organization</label>
+                    <input type="text" required className="w-full bg-white/5 border border-white/10 rounded-2xl p-4 focus:border-brand-green/50 outline-none text-white" placeholder="Business Name" />
+                  </div>
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <label className="text-xs font-bold uppercase tracking-widest text-white/20">Digital Coordinates</label>
                     <input type="email" required className="w-full bg-white/5 border border-white/10 rounded-2xl p-4 focus:border-brand-green/50 outline-none text-white" placeholder="Work Email" />
                   </div>
-                </div>
-                
-                <div className="space-y-2">
-                  <label className="text-xs font-bold uppercase tracking-widest text-white/20">Asset URL</label>
-                  <input type="url" required className="w-full bg-white/5 border border-white/10 rounded-2xl p-4 focus:border-brand-green/50 outline-none text-white" placeholder="Company Website" />
+                  <div className="space-y-2">
+                    <label className="text-xs font-bold uppercase tracking-widest text-white/20">Comm Line</label>
+                    <input type="tel" required className="w-full bg-white/5 border border-white/10 rounded-2xl p-4 focus:border-brand-green/50 outline-none text-white" placeholder="Work Number" />
+                  </div>
                 </div>
 
                 <div className="space-y-2">
                   <label className="text-xs font-bold uppercase tracking-widest text-white/20">Growth Sector</label>
-                  <select className="w-full bg-white/5 border border-white/10 rounded-2xl p-4 focus:border-brand-green/50 outline-none appearance-none text-white">
-                    <option className="bg-brand-gray">Full-Stack Digital Engineering</option>
-                    <option className="bg-brand-gray">Performance Marketing Engines</option>
-                    <option className="bg-brand-gray">Brand Equity Architecture</option>
-                    <option className="bg-brand-gray">Intelligence & Analytics</option>
+                  <select required defaultValue="" className="w-full bg-white/5 border border-white/10 rounded-2xl p-4 focus:border-brand-green/50 outline-none appearance-none text-white cursor-pointer group-hover:bg-white/10 transition-colors">
+                    <option value="" disabled className="bg-brand-gray">Select Service</option>
+                    <option className="bg-brand-gray">AI Solutions</option>
+                    <option className="bg-brand-gray">Digital Strategy</option>
+                    <option className="bg-brand-gray">Brand Identity</option>
+                    <option className="bg-brand-gray">App Dev</option>
+                    <option className="bg-brand-gray">Growth Engineering</option>
+                    <option className="bg-brand-gray">Market Intelligence</option>
+                    <option className="bg-brand-gray">Revenue Logic</option>
                   </select>
                 </div>
 
                 <div className="space-y-2">
                   <label className="text-xs font-bold uppercase tracking-widest text-white/20">Project Brief</label>
-                  <textarea className="w-full h-32 bg-white/5 border border-white/10 rounded-2xl p-4 focus:border-brand-green/50 outline-none resize-none text-white" placeholder="What technical bottlenecks are stalling your scale?" />
+                  <textarea required className="w-full h-32 bg-white/5 border border-white/10 rounded-2xl p-4 focus:border-brand-green/50 outline-none resize-none text-white" placeholder="What technical bottlenecks are stalling your scale?" />
                 </div>
 
                 <Button type="submit" size="lg" className="w-full py-6">

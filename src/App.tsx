@@ -13,7 +13,6 @@ import { About } from './components/About';
 import { ContactForm } from './components/ContactForm';
 import { AIPlanner } from './components/AIPlanner';
 import { InnovationBlog } from './components/Testimonials';
-import { ExitIntentPopup } from './components/ExitIntentPopup';
 import { SocialMission } from './components/SocialMission';
 import { motion } from 'motion/react';
 import { ArrowUpRight } from 'lucide-react';
@@ -74,7 +73,6 @@ export default function App() {
       <ScrollToTop />
       <div className="min-h-screen flex flex-col">
         <Header />
-        <ExitIntentPopup />
         <div className="flex-grow">
           <Routes>
             <Route path="/" element={<HomePage />} />

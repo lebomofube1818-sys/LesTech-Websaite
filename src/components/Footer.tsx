@@ -1,5 +1,6 @@
-import { Mail, Phone, MapPin, Linkedin, Twitter, Instagram, ArrowUpRight, Home } from 'lucide-react';
+import { Mail, Phone, MapPin, Linkedin, Twitter, Instagram, Facebook, ArrowUpRight, MessageCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { Logo } from './Logo';
 
 export const Footer = () => {
   return (
@@ -7,18 +8,15 @@ export const Footer = () => {
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
           <div className="col-span-1 lg:col-span-2 px-2 sm:px-0">
-            <Link to="/" className="flex items-center gap-2 mb-8 group">
-              <div className="w-10 h-10 rounded-xl brand-gradient flex items-center justify-center brand-glow group-hover:rotate-12 transition-transform">
-                <Home className="w-6 h-6 text-black" strokeWidth={2.5} />
-              </div>
-              <span className="font-display font-bold text-2xl tracking-tighter text-white group-hover:text-brand-green transition-colors">LESTECH</span>
+            <Link to="/" className="mb-8 block">
+              <Logo iconSize="lg" />
             </Link>
             <p className="text-white/60 text-base sm:text-lg mb-8 max-w-md leading-relaxed">
               We help businesses transform ideas into powerful digital solutions that drive growth, efficiency, and success.
               Empowering Lesotho through technology & innovation.
             </p>
             <div className="flex gap-4">
-              {[Linkedin, Twitter, Instagram].map((Icon, i) => (
+              {[Linkedin, Twitter, Instagram, Facebook].map((Icon, i) => (
                 <a key={i} href="#" className="w-10 h-10 rounded-full glass flex items-center justify-center hover:bg-white/10 transition-colors">
                   <Icon className="w-5 h-5 text-white/70" />
                 </a>
@@ -60,6 +58,13 @@ export const Footer = () => {
                   <Phone className="w-5 h-5 text-brand-green flex-shrink-0" />
                   <div className="min-w-0">
                     <p className="text-white font-medium text-sm sm:text-base">Phone</p>
+                    <p className="text-white/60 text-xs sm:text-sm">+266 62392626</p>
+                  </div>
+                </li>
+                <li className="flex items-start gap-4">
+                  <MessageCircle className="w-5 h-5 text-brand-green flex-shrink-0" />
+                  <div className="min-w-0">
+                    <p className="text-white font-medium text-sm sm:text-base">WhatsApp</p>
                     <p className="text-white/60 text-xs sm:text-sm">+266 62392626</p>
                   </div>
                 </li>

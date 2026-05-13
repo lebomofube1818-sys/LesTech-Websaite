@@ -7,7 +7,7 @@ export const Hero = () => {
   const navigate = useNavigate();
 
   return (
-    <section className="relative min-h-[95vh] flex items-center justify-center pt-20 px-6 overflow-hidden">
+    <section className="relative min-h-[85vh] sm:min-h-[95vh] flex items-center justify-center pt-32 sm:pt-64 lg:pt-80 px-6 overflow-hidden">
       {/* Background Image Layer */}
       <div className="absolute inset-0 z-0">
         <img 
@@ -20,8 +20,8 @@ export const Hero = () => {
       </div>
 
       {/* Background Decor */}
-      <div className="absolute top-1/4 -left-20 w-[500px] h-[500px] bg-brand-blue/10 rounded-full blur-[140px] animate-pulse z-1" />
-      <div className="absolute bottom-1/4 -right-20 w-[450px] h-[450px] bg-brand-green/10 rounded-full blur-[140px] z-1" />
+      <div className="hidden sm:block absolute top-1/4 -left-20 w-[500px] h-[500px] bg-brand-blue/10 rounded-full blur-[140px] animate-pulse z-1" />
+      <div className="hidden sm:block absolute bottom-1/4 -right-20 w-[450px] h-[450px] bg-brand-green/10 rounded-full blur-[140px] z-1" />
       
       {/* Mesh Grid Background */}
       <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 brightness-50" />
@@ -34,50 +34,6 @@ export const Hero = () => {
           transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
           style={{ transformStyle: 'preserve-3d' }}
         >
-          <motion.div
-            animate={{ 
-              y: [0, -10, 0],
-              rotateZ: [0, 1, -1, 0] 
-            }}
-            transition={{ 
-              duration: 6, 
-              repeat: Infinity, 
-              ease: "easeInOut" 
-            }}
-            whileHover={{ 
-              scale: 1.1, 
-              rotateX: 15, 
-              rotateY: -15,
-              boxShadow: "0 20px 60px rgba(26, 230, 128, 0.4)",
-              translateZ: 100
-            }}
-            whileTap={{ scale: 0.95 }}
-            className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full mb-8 text-sm font-black border border-white/20 uppercase tracking-[0.2em] text-brand-green cursor-pointer relative z-20 group transition-all bg-black/40 backdrop-blur-xl overflow-hidden shadow-2xl"
-            onClick={() => {
-              if (window.location.pathname === '/') {
-                document.getElementById('mission')?.scrollIntoView({ behavior: 'smooth' });
-              } else {
-                window.location.href = '/#mission';
-              }
-            }}
-          >
-            {/* Animated Shimmer Background */}
-            <motion.div 
-              className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full"
-              animate={{ x: ['100%', '-100%'] }}
-              transition={{ duration: 3, repeat: Infinity, ease: "linear", repeatDelay: 2 }}
-            />
-            
-            {/* Glow Core */}
-            <div className="absolute inset-0 bg-brand-green/5 blur-xl group-hover:bg-brand-green/20 transition-colors" />
-
-            <Sparkles className="w-5 h-5 group-hover:scale-125 group-hover:rotate-12 transition-all duration-500 relative z-10" />
-            <span className="relative z-10 drop-shadow-sm">Full House Digital Solutions</span>
-
-            {/* Bottom reflect line */}
-            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1/2 h-[1px] bg-gradient-to-r from-transparent via-brand-green/50 to-transparent" />
-          </motion.div>
-          
           <h1 className="text-4xl sm:text-6xl md:text-8xl font-black mb-6 sm:mb-8 leading-[1] sm:leading-[0.9] tracking-tighter text-gradient relative" style={{ transform: 'translateZ(50px)' }}>
             <span className="absolute inset-0 blur-[40px] sm:blur-[60px] bg-brand-green/20 -z-1" />
             ONE STOP. <br /> 
