@@ -14,16 +14,32 @@ import { ContactForm } from './components/ContactForm';
 import { AIPlanner } from './components/AIPlanner';
 import { InnovationBlog } from './components/Testimonials';
 import { SocialMission } from './components/SocialMission';
-import { ExitIntentPopup } from './components/ExitIntentPopup';
+import { LoaderScreen } from './components/LoaderScreen';
 import { motion } from 'motion/react';
 import { ArrowUpRight } from 'lucide-react';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 function ScrollToTop() {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
+    if (hash) {
+      const id = decodeURIComponent(hash.substring(1));
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        const timer = setTimeout(() => {
+          const reElement = document.getElementById(id);
+          if (reElement) {
+            reElement.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 150);
+        return () => clearTimeout(timer);
+      }
+    } else {
+      window.scrollTo(0, 0);
+    }
+  }, [pathname, hash]);
   return null;
 }
 
@@ -69,12 +85,25 @@ const StrategyPage = () => (
 const AboutPage = () => <About />;
 
 export default function App() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    if (isLoading) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isLoading]);
+
   return (
     <Router>
       <ScrollToTop />
+      {isLoading && <LoaderScreen onComplete={() => setIsLoading(false)} />}
       <div className="min-h-screen flex flex-col">
         <Header />
-        <ExitIntentPopup />
         <div className="flex-grow">
           <Routes>
             <Route path="/" element={<HomePage />} />

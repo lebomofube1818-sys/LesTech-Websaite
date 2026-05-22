@@ -15,7 +15,8 @@ import {
   CheckCircle2
 } from 'lucide-react';
 import { Button } from './Button';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
 const services = [
   {
@@ -126,6 +127,29 @@ const services = [
 
 export const ServicesOverview = () => {
   const [selectedService, setSelectedService] = useState<typeof services[0] | null>(null);
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const hash = decodeURIComponent(location.hash.substring(1).toLowerCase());
+      
+      const matched = services.find(s => {
+        const titleLower = s.title.toLowerCase();
+        if (hash === 'ai-solutions' && titleLower.includes('ai')) return true;
+        if (hash === 'digital-strategy' && titleLower.includes('branding')) return true;
+        if (hash === 'brand-identity' && titleLower.includes('branding')) return true;
+        if (hash === 'app-dev' && (titleLower.includes('app') || titleLower.includes('website'))) return true;
+        return false;
+      });
+
+      if (matched) {
+        // Run a small timeout to let the view settle or scroll
+        setTimeout(() => {
+          setSelectedService(matched);
+        }, 100);
+      }
+    }
+  }, [location.hash]);
 
   return (
     <section className="py-24 px-6 relative" id="services">

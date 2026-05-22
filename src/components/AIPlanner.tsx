@@ -109,7 +109,7 @@ export const AIPlanner = () => {
       </div>
 
       {/* Technical Breakdown Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-32">
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-8 mt-32">
         {[
           {
             icon: Database,
@@ -136,11 +136,13 @@ export const AIPlanner = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7 + (i * 0.1) }}
             viewport={{ once: true }}
-            className="p-8 rounded-3xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors"
+            className={`p-5 sm:p-8 rounded-2xl sm:rounded-3xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors ${
+              i === 2 ? 'col-span-2 md:col-span-1' : 'col-span-1'
+            }`}
           >
-            <feat.icon className={`w-8 h-8 mb-6 ${feat.color === 'brand-green' ? 'text-brand-green' : feat.color === 'brand-blue' ? 'text-brand-blue' : 'text-white'}`} />
-            <h4 className="text-xl font-bold mb-3 text-white">{feat.title}</h4>
-            <p className="text-white/40 text-sm leading-relaxed">{feat.text}</p>
+            <feat.icon className={`w-6 h-6 sm:w-8 sm:h-8 mb-4 sm:mb-6 ${feat.color === 'brand-green' ? 'text-brand-green' : feat.color === 'brand-blue' ? 'text-brand-blue' : 'text-white'}`} />
+            <h4 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-white tracking-tight">{feat.title}</h4>
+            <p className="text-white/40 text-xs sm:text-sm leading-relaxed">{feat.text}</p>
           </motion.div>
         ))}
       </div>

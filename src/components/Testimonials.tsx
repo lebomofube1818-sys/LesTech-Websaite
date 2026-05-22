@@ -26,6 +26,14 @@ const articles = [
     desc: 'Beyond third-party cookies: Why building your own unified data logic is essential for protecting your business intellectual property.',
     icon: <Rocket className="w-6 h-6 text-brand-green" />,
     image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop'
+  },
+  {
+    title: 'Strategic Refactoring: Paying Down Tech Debt Safely',
+    category: 'Growth Engineering',
+    readTime: '8 min',
+    desc: 'Why waiting for a complete rewrite is a strategic blunder, and how incremental engineering allows continuous feature velocity.',
+    icon: <BookOpen className="w-6 h-6 text-brand-blue" />,
+    image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1000&auto=format&fit=crop'
   }
 ];
 
@@ -54,7 +62,7 @@ export const InnovationBlog = () => {
           </Button>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {articles.map((article, i) => (
             <motion.div
               key={i}
@@ -62,48 +70,50 @@ export const InnovationBlog = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              whileHover={{ y: -10 }}
+              whileHover={{ y: -6 }}
               className="group relative"
             >
               <div className="absolute inset-0 bg-brand-green/5 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity" />
               
-              <div className="relative glass rounded-[40px] border-white/5 overflow-hidden flex flex-col h-full hover:border-brand-green/30 transition-colors">
-                <div className="relative h-48 sm:h-56 overflow-hidden">
+              <div className="relative glass rounded-[32px] border-white/5 overflow-hidden flex flex-col sm:flex-row h-full hover:border-brand-green/30 transition-colors">
+                <div className="relative w-full sm:w-[38%] min-h-[220px] sm:h-auto overflow-hidden flex-shrink-0">
                   <img 
                     src={article.image} 
                     alt={article.title} 
                     className="w-full h-full object-cover grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700" 
                     referrerPolicy="no-referrer"
                   />
-                  <div className="absolute top-6 left-6 px-4 py-1.5 rounded-full glass border-white/10 text-[10px] font-bold uppercase tracking-widest text-white backdrop-blur-md">
+                  <div className="absolute top-4 left-4 px-4 py-1.5 rounded-full glass border-white/10 text-[10px] font-bold uppercase tracking-widest text-white backdrop-blur-md">
                     {article.category}
                   </div>
                 </div>
 
-                <div className="p-8 flex flex-col flex-grow">
-                  <div className="flex items-center gap-3 mb-6">
-                    <div className="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center border border-white/5 group-hover:border-brand-green/30 transition-colors">
-                      {article.icon}
+                <div className="p-6 sm:p-8 flex flex-col flex-grow justify-between min-w-0">
+                  <div>
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center border border-white/5 group-hover:border-brand-green/30 transition-colors flex-shrink-0">
+                        {article.icon}
+                      </div>
+                      <div className="flex items-center gap-2 text-white/40 text-[10px] font-bold uppercase tracking-widest">
+                        <Clock className="w-3 h-3" />
+                        {article.readTime}
+                      </div>
                     </div>
-                    <div className="flex items-center gap-2 text-white/40 text-[10px] font-bold uppercase tracking-widest">
-                      <Clock className="w-3 h-3" />
-                      {article.readTime}
-                    </div>
+
+                    <h3 className="text-lg sm:text-xl font-black mb-3 leading-tight group-hover:text-brand-green transition-colors line-clamp-2">
+                      {article.title}
+                    </h3>
+                    
+                    <p className="text-white/50 text-xs sm:text-sm leading-relaxed mb-6 line-clamp-3">
+                      {article.desc}
+                    </p>
                   </div>
 
-                  <h3 className="text-xl sm:text-2xl font-black mb-4 leading-tight group-hover:text-brand-green transition-colors">
-                    {article.title}
-                  </h3>
-                  
-                  <p className="text-white/50 text-sm leading-relaxed mb-8 flex-grow">
-                    {article.desc}
-                  </p>
-
-                  <div className="pt-6 border-t border-white/5 flex justify-between items-center">
-                    <span className="text-sm font-bold text-white/60 group-hover:text-white transition-colors flex items-center gap-2">
+                  <div className="pt-4 border-t border-white/5 flex justify-between items-center mt-auto">
+                    <span className="text-xs sm:text-sm font-bold text-white/60 group-hover:text-white transition-colors flex items-center gap-2">
                       Read Article <ArrowRight className="w-4 h-4 text-brand-green" />
                     </span>
-                    <BookOpen className="w-5 h-5 text-white/20 group-hover:text-brand-green/50 transition-colors" />
+                    <BookOpen className="w-4 h-4 sm:w-5 h-5 text-white/20 group-hover:text-brand-green/50 transition-colors" />
                   </div>
                 </div>
               </div>

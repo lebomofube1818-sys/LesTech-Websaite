@@ -7,7 +7,7 @@ export const Hero = () => {
   const navigate = useNavigate();
 
   return (
-    <section className="relative min-h-[85vh] sm:min-h-[95vh] flex items-center justify-center pt-32 sm:pt-64 lg:pt-80 px-6 overflow-hidden">
+    <section className="relative min-h-[85vh] sm:min-h-[95vh] flex items-center justify-center pt-32 sm:pt-64 lg:pt-80 px-4 sm:px-6 overflow-hidden">
       {/* Background Image Layer */}
       <div className="absolute inset-0 z-0">
         <img 
@@ -27,24 +27,25 @@ export const Hero = () => {
       <div className="absolute inset-0 bg-brand-black/20" />
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
 
-      <div className="max-w-5xl mx-auto text-center relative z-10" style={{ perspective: '2000px' }}>
+      <div className="max-w-5xl mx-auto text-center relative z-10 w-full" style={{ perspective: '2000px' }}>
         <motion.div
           initial={{ opacity: 0, y: 30, rotateX: 10 }}
           animate={{ opacity: 1, y: 0, rotateX: 0 }}
           transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
           style={{ transformStyle: 'preserve-3d' }}
+          className="w-full"
         >
-          <h1 className="text-4xl sm:text-6xl md:text-8xl font-black mb-6 sm:mb-8 leading-[1] sm:leading-[0.9] tracking-tighter text-gradient relative" style={{ transform: 'translateZ(50px)' }}>
+          <h1 className="text-3xl sm:text-6xl md:text-8xl font-black mb-6 sm:mb-8 leading-[1.1] sm:leading-[0.9] tracking-tighter text-gradient relative" style={{ transform: 'translateZ(50px)' }}>
             <span className="absolute inset-0 blur-[40px] sm:blur-[60px] bg-brand-green/20 -z-1" />
             ONE STOP. <br /> 
             ENDLESS SOLUTIONS.
           </h1>
           
-          <p className="text-base sm:text-lg md:text-xl text-white/90 mb-8 sm:mb-10 max-w-2xl mx-auto leading-relaxed font-medium drop-shadow-lg px-4" style={{ transform: 'translateZ(30px)' }}>
+          <p className="text-sm sm:text-lg md:text-xl text-white/90 mb-8 sm:mb-10 max-w-2xl mx-auto leading-relaxed font-medium drop-shadow-lg px-2 sm:px-4" style={{ transform: 'translateZ(30px)' }}>
             We help businesses transform ideas into powerful <span className="text-brand-green">digital solutions</span> that drive growth, efficiency, and success.
           </p>
           
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-20 px-6">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-20 px-2 sm:px-6 w-full">
             <motion.div
               whileHover={{ 
                 scale: 1.05, 
@@ -56,7 +57,7 @@ export const Hero = () => {
             >
               <Button 
                 size="lg" 
-                className="w-full sm:w-auto px-10 shadow-xl"
+                className="w-full sm:w-auto px-6 sm:px-10 py-3.5 sm:py-4 text-sm sm:text-lg shadow-xl"
                 onClick={() => {
                   if (window.location.pathname === '/') {
                     document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
@@ -65,7 +66,7 @@ export const Hero = () => {
                   }
                 }}
               >
-                Initiate Growth <ArrowRight className="w-5 h-5" />
+                Initiate Growth <ArrowRight className="w-5 h-5 flex-shrink-0" />
               </Button>
             </motion.div>
             
@@ -94,7 +95,7 @@ export const Hero = () => {
               <Button 
                 variant="outline" 
                 size="lg" 
-                className="w-full sm:w-auto px-10 backdrop-blur-sm transition-all hover:border-brand-green/50 shadow-xl relative z-10"
+                className="w-full sm:w-auto px-6 sm:px-10 py-3.5 sm:py-4 text-sm sm:text-lg backdrop-blur-sm transition-all hover:border-brand-green/50 shadow-xl relative z-10"
                 onClick={() => navigate('/services')}
                 style={{ transform: 'translateZ(20px)' }}
               >
